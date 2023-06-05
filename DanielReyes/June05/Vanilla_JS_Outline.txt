@@ -3,7 +3,8 @@ Objective:
 
 I. Introduction to Vanilla Javascript
 	A. What is Vanilla Javascript
-	B. Vanilla Javascript Components
+	B  Why use Vanila Javascript
+	C. Vanilla Javascript Components
 II. Creating the Project
 	A. Creating a Project
 		1. Create a folder "Todo-Course"
