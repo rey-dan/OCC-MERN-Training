@@ -1,0 +1,91 @@
+Objective:
+- to create a Todo List using Vanilla Javascript
+
+I. Introduction to Vanilla Javascript
+	A. What is Vanilla Javascript
+	B. Vanilla Javascript Components
+II. Creating the Project
+	A. Creating a Project
+		1. Create a folder "Todo-Course"
+		2. Open the "Todo-course" folder in VSCode
+		3. Inside the "TODO-COURSE" project folder create an HTML file named "index.html"
+        4. Inside the same project folder create a CSS file named "style.css"
+        5. Inside the same project folder create a JS file named "app.js"
+    B. HTML
+        1. Open "index.html"
+        2. Press and hold shift + 1 then hit tab to open html boilerplate
+        3. Using link tag
+            3a. Link Poppins font from google fonts
+            3b. Link Font Awesome cdn
+            3c. Link style.css
+        4. header tag
+            4a. h1 tag
+        5. form tag
+            5a. input tag
+            5b. button tag
+            5c. i tag of font awesome
+            5d. div tag
+            5e. select and option tag
+        6. list tag
+            6a. ul tag
+            6b. li tag
+        7. script tag to link app.js
+    C. CSS
+        1. CSS Reset
+            1a. global css selector
+        2. CSS Selectors
+            2a. selecting html elements by tags
+            2b. selecting multiple html elements
+            2c. selecting html elements by class name
+        3. CSS pseudo-class
+            3a. hover
+        4. CSS pseudo-element
+            4a. after
+    D. Javascript
+        1. Declaring Selectors
+            1a. selecting html elements by class name
+                1a1. const todoInput = document.querySelector('.todo-input');
+                1a2. const todoButton = document.querySelector('.todo-button');
+                1a3. const todoList = document.querySelector('.todo-list');
+                1a4. const filterOption = document.querySelector('.filter-todo');
+        2. Defining Event Listeners
+            2a. DOMContentLoaded
+                2a1. document.addEventListener('DOMContentLoaded', getTodos);
+            2b. Click
+                2b1. todoButton.addEventListener('click', addTodo);
+                2b2. todoList.addEventListener('click', deleteCheck);
+                2b3. filterOption.addEventListener('click', filterTodo);
+        3. Adding Functions
+            3a. function addTodo(event) {}
+                3a1. console.log()
+                3a2. .preventDefault()
+                3a3. .createElement("element")
+                3a4. .classList.add("className")
+                3a5. .innerText
+                3a6. .value
+                3a7. .appendChild();
+                3a8. calling another function inside a function
+                3a9. innerHTML
+            3b. function deleteCheck(e) {}
+                3b1. .target
+                3b2. if-else statement
+                3b3. .classList[0]
+                3b3. strictly equal comparator
+                3b4. addEventListener "transitionend"
+                3b5. .remove()
+                3b6. .classList.toggle("className")
+            3c. function filterTodo(e) {}
+                3c1. .childNodes
+                3c2. .forEach
+                3c3. switch-case-break statement
+                3c4. negation (!)
+            3d. function saveLocalTodos(todo) {}
+                3d1. localStorage.getItem()
+                3d2. null
+                3d3. JSON.parse()
+                3d4. .push
+                3d5. localStorage.setItem()
+                3d6. JSON.stringify()
+            3e. function getTodos() {}
+            3f. function removeLocalTodos(todo){}
+                3f1. .splice(index, number_of_item)
