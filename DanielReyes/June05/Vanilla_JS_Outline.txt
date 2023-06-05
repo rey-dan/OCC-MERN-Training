@@ -3,7 +3,7 @@ Objective:
 
 I. Introduction to Vanilla Javascript
 	A. What is Vanilla Javascript
-	B  Why use Vanila Javascript
+	B  Why use Vanilla Javascript
 	C. Vanilla Javascript Components
 II. Creating the Project
 	A. Creating a Project
