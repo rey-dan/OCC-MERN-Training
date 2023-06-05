@@ -1,0 +1,112 @@
+## Vanilla Javascript
+
+I. Explain HTML, CSS, JS
+
+II. Write HTML code
+
+1. Add custom font
+2. Add header
+3. Add form
+4. Add list
+
+III. Add styles
+
+1. Remove basic styling of browser
+2. Add styling of body
+3. Add styling of button
+4. Add styling of button
+
+IV. Add Javascript
+
+A. Add Selectors
+
+1. Select input
+2. Select button
+3. Select list
+
+B. Add Event Listeners
+
+1. Add listener for button click
+
+C. Add Functions
+
+1. Add todo item
+    
+    1c.
+    
+    1c1. Prevent form from submitting
+    
+    1c2. Create div element for Todo
+    
+    1c3. Create li element for Todo list
+    
+    1c4. Add check mark button
+    
+    1c5. Add trash button
+    
+    1c6. Append Todo list
+    
+    1c7. Get value in Todo input
+    
+    1c8. Clear Todo input value
+    
+2. Delete Todo item
+    
+    2c.
+    
+    2c1. Check if the trash button was clicked
+    
+    2c2. Remove the Todo item (parent element of trash button)
+    
+    2c3. Add animation when removing Todo item
+    
+    2c4. Add event listener for removing Todo item when animation ended
+    
+3. Check mark for done item
+    
+    3c.
+    
+    3c1. Toggle “completed” class
+    
+4. Filter Todo item
+    
+    4c.
+    
+    4c1. Add select option in HTML
+    
+    4c2. Get the values in Todo list
+    
+    4c3. Filter the values depending on selected option (all, completed, uncompleted)
+    
+
+D.  Local Storage
+
+1. Add data in local storage
+    
+    1d.
+    
+    1d1. Check if todos in local storage already exist
+    
+    1d2. Create empty list for todos, if it doesn’t exist
+    
+    1d3. Get the todos from local storage, if it exists
+    
+    1d4. Push the todo to the todos in local storage
+    
+2. Display updated data from local storage
+    
+    2d.
+    
+    2d1. Run getTodos function in initial load
+    
+    2d2. Display each todo in the save todos in local storage
+    
+3. Remove local todos
+    
+    3d.
+    
+    3d1. Get the index of todo
+    
+    3d2. Use splice to remove the todo in todos
+    
+    3d3. Update local storage
