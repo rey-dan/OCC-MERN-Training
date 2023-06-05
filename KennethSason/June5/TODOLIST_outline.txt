@@ -1,7 +1,10 @@
-
-I. Start with creating the project directory. 
+I. Todo list 
+	A. What are we going to make?
+	B. Why are we doing it?
+	C. How do we do it?
+II. Start with creating the project directory. 
 	A. Create the starting files.
-	 1. make a working
+	 1. make a working directory with a name todo list
 	 2. go inside the folder.
 	 3. create an html file. 
 	 4. create a js file.
@@ -12,7 +15,7 @@ I. Start with creating the project directory.
 	 2. add the links for fontawesome, google fonts.
 	 3. connect the css file.
 	 4. connect the js file. 
-II. Create the html file structure.
+III. Create the html file structure.
 	A. Organizing the html tags in the html file.
 	  1. Make the header tag.
 		1a) add h1 tag inside.
@@ -23,7 +26,7 @@ II. Create the html file structure.
 	  3. Adding the div for containing the list items.
 	  	3a) create <div class="todo-container"></div>
 		3b) put <ul class="todo-list"></ul> inside the todo-container div
-III. Applying CSS styles.
+IV. Applying CSS styles.
 	 A. Remove the default styling
 	 B  Applying css styles.
 		1 select the body to apply styles.
@@ -38,21 +41,32 @@ III. Applying CSS styles.
   			3b) display: flex;
   			3c) justify-content: center;
   			3d) align-items: center;
+		4. apply styles to the form and the elements inside.
+		5. Style the .todo-container div 
 	 	
 
-IV. Adding JS functionalities
+V. Adding JS functionalities
 	A. define these variables
 		1.const todoInput = document.querySelector(".todo-input");
 		2.const todoButton = document.querySelector(".todo-button");
 		3.const todoList = document.querySelector(".todo-list");
 		4.const filterOption = document.querySelector(".filter-todo");
-	B. Add an event to the todoButton 
+	B. Adding an event to the todoButton 
 		1.todoButton.addEventListener("click", addTodo);
 		2. create addTodo function
 		3  //this function adds an item to the list 
 	C. Adding an event to the todoList 
 		1. todoList.addEventListener("click", deleteCheck);
 		2. creating the deleteCheck function.
+	D. adding an event to the filterOption 
+		1. filterOption.addEventListener("click", filterTodo);
+		2. create the filterTodo function.
+	E. Saving the data in the browser's local storage.
+		1. make a function function saveLocalTodos(todo){}
+	F. Retrieving the data from the browser once the content is loaded.
+		1. document.addEventListener("DOMContentLoaded", getTodos);
+		2. define the function getTodos
+
 	
 	
 	 
