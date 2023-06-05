@@ -1,4 +1,0 @@
-
-I have finished watching the Youtube video provided for Vanilla JavaScript. 
-
-Currently working on the detailed outline of the things discussed on the video.
