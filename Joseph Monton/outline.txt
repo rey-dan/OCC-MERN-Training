@@ -1,0 +1,67 @@
+JAVASCRIPT TODO LIST
+
+I. Objectives
+
+	A. What do we want to create? 
+
+II. Coding
+
+	A. HTML
+	   1. Structure website
+
+	B. CSS
+	   1. Add styling
+
+	C. Javascript
+
+	   1. Introduce what are we making
+		1a. Dynamic Divs
+
+	   2. Selectors, Event Listeners, Functions
+		2a. What are Javascript Selectors
+		2b. What are Event Listeners
+		2c. What are Functions
+
+	   3. Creating Functions
+		3a. Creating a Function to add a new TODO item and styling them
+		    3a1. Creating Selectors
+		    3a2. Creating Event Listeners
+		    3a3. Creating the Function
+
+		3b. Create a Delete and Completed Function
+		    3b1. Creating Selectors
+		    3b2. Creating Event Listeners
+		    3b3. Creating the Function
+
+		3c. Create Filter Function
+		    3c1. Creating Selectors
+		    3c2. Creating Event Listeners
+		    3c3. Creating the Function
+
+	    4. Using Local Storage to Store data
+		4a. What is Local Storage
+		4b. Creating a Function to save to Local Storage
+		4c. Creating a Function to display values from Local Storage
+		4d. Creating a function that deletes a value from the Local Storage
+
+
+What we want to do:
+- Create a Todo List App
+- Can Create a new TODO item
+- Can Remove a new TODO item
+- Can mark TODO item as Completed
+- TODO items should still be displayed even though the browser is closed.
+
+
+
+<div class="todo">
+     <li class="todo-item"></li>
+     <button><i class="fas fa-check"></i></button>
+     <button>Completed</button>
+</div>
+
+Vanilla Javascript
+
+I. Introduction to Javascript
+
+II. 
