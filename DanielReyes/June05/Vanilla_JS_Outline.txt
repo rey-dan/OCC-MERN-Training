@@ -6,10 +6,10 @@ I. Introduction to Vanilla Javascript
 	B  Why use Vanilla Javascript
 	C. Vanilla Javascript Components
 II. Creating the Project
-	A. Creating a Project
-		1. Create a folder "Todo-Course"
-		2. Open the "Todo-course" folder in VSCode
-		3. Inside the "TODO-COURSE" project folder create an HTML file named "index.html"
+    A. Creating a Project
+        1. Create a folder "Todo-Course"
+        2. Open the "Todo-course" folder in VSCode
+        3. Inside the "TODO-COURSE" project folder create an HTML file named "index.html"
         4. Inside the same project folder create a CSS file named "style.css"
         5. Inside the same project folder create a JS file named "app.js"
     B. HTML
