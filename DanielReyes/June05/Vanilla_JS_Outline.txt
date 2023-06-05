@@ -2,9 +2,9 @@ Objective:
 - to create a Todo List using Vanilla Javascript
 
 I. Introduction to Vanilla Javascript
-	A. What is Vanilla Javascript
-	B  Why use Vanilla Javascript
-	C. Vanilla Javascript Components
+    A. What is Vanilla Javascript
+    B  Why use Vanilla Javascript
+    C. Vanilla Javascript Components
 II. Creating the Project
     A. Creating a Project
         1. Create a folder "Todo-Course"
