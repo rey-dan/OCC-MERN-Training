@@ -1,0 +1,30 @@
+I. What is Vanilla Javascript
+-If ur uncomfortable using Javascript it can give you foundation of all
+the basic things 
+
+— start by creating a new project by creating a scratch
+— create and index, style,app.js
+— have a basic html code 
+— add some decent font
+— new tab > search for google font > copy and paste in link tag
+— script down tag app.js
+— add font awesome CDN css > copy and paste link tag
+— use all these custom pre-made icon 
+— add a simple title header
+— create a form, add input text and class=“todo-input”
+, button class =“todo-button”
+,icon class=“fas fa-plus-square”
+,div class=“todo-container”
+,ul class=“todo-list”
+
+II. Organize Javascript
+A. Selectors
+B. Event listeners
+c. Functions
+   C1) add todo, 
+   C2) delete todo
+   C3) add filter (all, completed, uncompleted
+   C4)  
+
+Demo: create a Javascript to-do list
+-one small project off the core
