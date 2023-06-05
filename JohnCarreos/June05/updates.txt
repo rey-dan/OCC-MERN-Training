@@ -1,0 +1,4 @@
+Afternoon activity updates:
+1. Watched youtube tutorial for vanilla javascript
+2. Followed along the tutorial and created a todo list app
+3. Created outline for topics discussed in the tutorial
