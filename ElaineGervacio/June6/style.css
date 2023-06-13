@@ -7,14 +7,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100vh;
         height: 100vh;
         background-image: url(cart.avif);
         background-size: cover;
     }
 
         .container{
-            width: 50vh;
+            width: 70vh;
             background-color: white;
             text-align: center;
             border-radius: 20px;
@@ -26,6 +25,7 @@
 
             input{
                 width: 40px;
+                margin-left: 30px;
             }
 
             .item{
@@ -33,7 +33,7 @@
             }
 
             button{
-                margin-left: 50px;
+                margin-left: 20px;
                 background-color: green;
                 border-radius: 5px;
                 padding: 5px;
@@ -42,7 +42,8 @@
 
         .cart{
             background-color: lightgray;
-            border-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
 
             ul{
@@ -60,3 +61,16 @@
             .delete-button{
                 background-color: red;
             }
+
+            #checkout-button{
+                background-color: blue;
+            }
+
+        /* #computations{
+            width: 70vh;
+            height: 100px;
+            background-color: lightgray;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            outline: 1px dotted red;
+        } */
