@@ -1,0 +1,121 @@
+Activity:
+
+1) Create a google document and add the following:
+2) Create a semi-detailed outline about JS Control Structures
+3) Assumptions:
+ Audience: People with no background in JS, but knows HTML and CSS
+ Duration: 1 Hour
+
+
+I. Getting to know JavaScript
+     A. What is JavaScript?
+     B. Why do we have to use it?
+     C. Why is it important?
+     D. Open code editor
+     E. create file app.js
+
+
+II. Control structures
+     A. Meet Control Statements
+          1. What are Control Statements?
+          2. Why do we need it?
+    
+     B. Using Control Statements
+        B.1. What do I need to know before using it?
+          1. What are datatypes and variables?
+          2. What are comparison or conditional expressions?
+          3. What are mathematical operators?
+          4. What is console.log()?
+          
+        B.2. Types of Control Statements
+          1. Conditional Control Statements
+              A. If - else statements
+                                      var money = 5;
+
+                                      if (money >= 10) {
+                                        console.log("You can buy a big ice cream!");
+                                      } else {
+                                        console.log("You can buy a small ice cream.");
+                                      }
+                                      
+                                      
+                                      
+                                      
+              B. Switch case
+                                      var number = 2;
+                                      var fruit;
+
+                                      switch (number) {
+                                        case 1:
+                                          fruit = "Apple";
+                                          break;
+                                        case 2:
+                                          fruit = "Banana";
+                                          break;
+                                        case 3:
+                                          fruit = "Orange";
+                                          break;
+                                        default:
+                                          fruit = "Unknown fruit";
+                                      }
+
+                                      console.log("You chose a " + fruit + "!");
+          
+       2. Looping/Iterative control statements
+             A. While loop
+                                      var i = 1;
+
+                                      while (i <= 5) {
+                                        console.log(i);
+                                        i++;
+                                      }
+                                      
+                                      
+                                      
+             B. For loop
+                                      for (var i = 1; i <= 5; i++) {
+                                         console.log(i);  
+                                      }
+                                      
+                                      
+                                      
+             C. doWhile loop
+                                     var i = 1;
+
+                                     do {
+                                       console.log(i);
+                                       i++;
+                                     } while (i <= 5);
+                                     
+                                     
+                                     
+             D. For ...inloop
+                                    var basket = {
+                                       apple: 3,
+                                       banana: 2,
+                                       orange: 4
+                                     };
+
+                                     for (var fruit in basket) {
+                                       console.log(fruit);
+                                     };
+                                     
+                                     
+                                     
+        3. Break statement
+                                     for (var i = 1; i <= 10; i++) {
+                                        if (i === 6) {
+                                          break;
+                                        }
+                                        console.log(i);
+                                      };
+                                      
+                                      
+                                      
+        4. Continue statement
+                                     for (var i = 1; i <= 10; i++) {
+                                        if (i % 2 === 0) {
+                                          continue;
+                                        }
+                                        console.log(i);
+                                      }
