@@ -155,3 +155,12 @@ function removeLocalTodos(todo) {
   todos.splice(todos.indexOf(todoIndex), 1)
   localStorage.setItem("todos", JSON.stringify(todos))
 }
+for (const key in object) {
+  if (Object.hasOwnProperty.call(object, key)) {
+    const element = object[key];
+    
+  }
+}
+for (const iterator of object) {
+  
+}
