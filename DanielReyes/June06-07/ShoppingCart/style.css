@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    object-fit: contain;
+    height: 150px;
+    width: 150px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+
+.mainContainer{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+ul, ol{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    list-style: none;
+    width: 100%;
+}
+
+ol {
+    flex-direction: column;
+}
+
+li {
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 5px;
+}
+
+ol li{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#totalAmount{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+h1 {
+    margin: 40px 20px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.itemName {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.addToCart {
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.adjustItem{
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+}
+
+.quantity {
+    text-align: center;
+    width: 50px;
+    margin: 5px 0px;
+    padding: px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.addItem, .removeItem, .deleteItem {
+    font-size: 20px;
+    padding: 0px 5px;
+    margin: 5px 0;
+    
+}
+
+.price {
+    font-size: large;
+}
+
+.equivalentPrice {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#overallAmount {
+    font-size: xx-large;
+}
+
+i{
+    pointer-events: none;
+}
