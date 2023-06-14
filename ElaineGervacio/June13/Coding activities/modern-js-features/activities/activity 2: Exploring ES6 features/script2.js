@@ -44,4 +44,29 @@ class Person {
 
 // Creating an instance of the Person class
 const personN = new Person('John', 25);
-personN.sayHello(); // Output: Hello, my name is John and I am 25 years old.
+// personN.sayHello(); // Output: Hello, my name is John and I am 25 years old.
+
+
+
+//Create a Promise
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    //simulate an asynchronous operation
+    setTimeout(() => {
+      //resolve promise with the fetched data
+      const data = 'Fetched Data';
+      resolve(data);
+    }, 2000);
+  });
+}
+
+//Use the promise with chaining
+let result = fetchData()
+  .then((data) => {
+  //handle the ersolved value
+  console.log(data);
+  return data;
+  })
+  .then((processedData) => {
+    console.log(processedData);
+  })
