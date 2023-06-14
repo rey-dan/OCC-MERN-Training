@@ -1,1 +1,86 @@
-//
+I. Javscript ES6
+	A. Define ES6
+	B. Why use ES6
+II. Variable Declarations
+	A. Differences between var,let, const
+		1. introduce let ==> what why
+		2. Highlight problems with var.
+			1a. State some examples 
+		3. Block Scope Note!!!: make a function
+		4. const
+	B. Arrow functions
+		1. difference on how to create arrow and normal functions
+		2. Highlight the difference 
+		3. Show  how hoisting is in functions
+	C. Default parameters
+		1. Declaration
+		2. Example
+	D. Template literals
+	E. For of
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================================
+I. Git and Github
+	A. Definition of version control systems
+	B. Purpose of version control systems
+II. How to set up Git
+	A. Installing Git
+	B. Configuring Git
+III. Basic of Git 
+	A. Navigating through the folders with CLI.
+	B. Initializing a Git repository
+		1.git init
+	C. Commiting changes
+		1. git add 
+		2. git commit -m ""
+	D. Viewing commit history
+		1. git log
+	E. Undoing things with Git 
+IV. Getting started with GitHub
+	A. Purpose of Github
+	B. Creating a remote repository
+	C. Setting up a remote repository on a local project.
+	D. Pushing changes to a remote repository
+	E. Cloning repositories
+
+(Ctrl+Shift+P) Sublime Html File Structure
+
+I. What is Javascript ES6? 
+    A. Define Javascript
+    B. Purpose of Javascript
+    C. Give Example of Javascript
+    D. How to use it?
+II. Setting up the Env
+    A. Using IDE
+III.  Javascript Basics
+    A. How to add JS in your project
+        1. Internal
+        2. External
+    B. Variables and Data Types
+        1. Define Variable
+        2. Purpose of it    
+        3. How to use it
+            3a. Discuss declaring it
+            3b. Discuss assigning Variable
+        4. Transition to Data Types
+        
+
+
