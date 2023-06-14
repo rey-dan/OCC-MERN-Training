@@ -17,6 +17,7 @@
         width: 400px;   
         height: 600px;
         overflow-x: scroll;
+        padding: 20px;
     }
 
     .card-title {
@@ -64,6 +65,7 @@
 
         span{
             font-size: 13px;
+            margin-bottom: 20px;
         }
 
         h1{

@@ -19,9 +19,11 @@ const displayProductData = async () => {
                                 </div>
                                 <h4 class="card-title">${product.title}</h4>
                                 <h5>$${product.price}</h5>
-                                <p>${product.description}</p>
+                                <p>Category: ${product.category}</p>
                                 <h6>Rating: ${product.rating.rate}</h6>
                                 <span>Qty: ${product.rating.count}</span>
+                                <p>${product.description}</p>
+                                
                             </div>
                         </div>
                     </div>`
