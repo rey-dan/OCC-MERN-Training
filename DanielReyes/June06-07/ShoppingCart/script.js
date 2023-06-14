@@ -14,6 +14,7 @@ const totalAmount = document.querySelector("#overallAmount");
 const addItem = document.querySelector(".addItem");
 const removeItem = document.querySelector(".removeItem");
 const deleteItem = document.querySelector(".deleteItem");
+const totalItemCount = document.querySelector("#itemCount");
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', getCartItems);
@@ -143,7 +144,7 @@ function deletingItem(e) {
   
 function updateTotal() {
     let total = 0;
-
+    let allItemCount = 0;
     let cartItemCount = Object.keys(cart);
     for(let i=0; i<cartItemCount.length; i++){
         let itemId = cartItemCount[i];
@@ -151,21 +152,31 @@ function updateTotal() {
         let price = items[itemId].price;
         let itemPrice = itemCount * price;
         total += itemPrice;
+        allItemCount += itemCount;
     }
     
     totalAmount.innerText = "$" + total;
+    if(allItemCount <= 0){
+        totalItemCount.innerText = "";
+    } else {
+        totalItemCount.innerText = "(" + allItemCount +")";
+    }
+    updateLocal();
+}
 
+function updateLocal (){
     // update localStorage
     if(localStorage.getItem('cartList') === null){
         cart = {};
     } else {
-        localStorage.setItem('cartList', JSON.stringify(cart));   
+        localStorage.setItem('cartList', JSON.stringify(cart));     
     }
 }
 
 function getCartItems(){
     if(localStorage.getItem("cartList") === null){
         cart = {};
+        localStorage.setItem('cartList', JSON.stringify(cart));
     } else {
         cart = JSON.parse(localStorage.getItem('cartList'));
     }
