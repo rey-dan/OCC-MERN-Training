@@ -9,13 +9,15 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(0deg, #000d47, #4d6dff, #db322a);
+    min-height: 100vh;
 }
 
 img{
     object-fit: contain;
     height: 150px;
     width: 150px;
-    border: 1px solid lightgray;
+    border: 2px solid gray;
     border-radius: 10px;
 }
 
@@ -23,7 +25,6 @@ img{
 .mainContainer{
     display: flex;
     justify-content: left;
-    align-items: left;
     flex-direction: column;
 }
 
@@ -45,7 +46,7 @@ ul, ol{
 }
 
 ol {
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 li {
@@ -53,6 +54,7 @@ li {
     border-radius: 20px;
     padding: 5px 20px;
     margin: 5px;
+    background: linear-gradient(180deg, #d0fff7, #a1dbff);
 }
 
 ol li{
@@ -61,10 +63,12 @@ ol li{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex: 1;
     text-align: center;
 }
 
 #totalAmount{
+    color: white;
     padding: 20px;
     width: 100%;
     display: flex;
@@ -76,11 +80,14 @@ ol li{
 
 h1 {
     margin: 40px 20px;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 h2 {
-    font-weight: bold;
+    font-weight: bolder;
     font-size: x-large;
+    color: rgb(227, 232, 255);
 }
 
 .itemName {
@@ -108,7 +115,6 @@ h2 {
     text-align: center;
     width: 50px;
     margin: 5px 0px;
-    padding: px;
     border: 2px solid black;
     border-radius: 5px;
 }
@@ -118,6 +124,21 @@ h2 {
     padding: 0px 5px;
     margin: 5px 0;
     
+}
+
+.addItem {
+    color: white;
+    background-color: rgb(23, 168, 23);
+}
+
+.removeItem {
+    color: white;
+    background-color: rgb(226, 168, 61);
+}
+
+.deleteItem {
+    color: white;
+    background-color: rgb(223, 55, 55);
 }
 
 .price {
@@ -135,4 +156,14 @@ h2 {
 
 i{
     pointer-events: none;
+}
+
+.itemName{
+    text-align: left;
+    width: 100px;
+}
+
+.quantity, .equivalentPrice {
+    text-align: center;
+    width: 50px;
 }
