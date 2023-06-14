@@ -1,0 +1,2 @@
+Use this API to display contents on the page:
+https://fakestoreapi.com/products
