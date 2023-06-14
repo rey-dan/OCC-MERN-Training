@@ -8,9 +8,10 @@ body{
 .img-con{
     height: 20%;
     width: 100%;
+    background: white;
 }
 .card-img{
-    
+    object-fit: contain;
     height: 250px;
     background-size: cover;
 }
