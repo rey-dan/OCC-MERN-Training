@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping Cart</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<section class="shop-section">
+				<h2 class="section-header">Kitchen Finds</h2>
+				<div class="shop-items">
+					<div class="shop-item">
+						<span class="shop-item-title">Gripper Board</span>
+						<img class="shop-item-image" src="img/gripper_board.jpg" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P150</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Egg Yolk Separator</span>
+						<img class="shop-item-image" src="img/egg yolk separator.jpg" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P100</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Loch Ness Ladle</span>
+						<img class="shop-item-image" src="img/loch ness ladle.jpg" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P120</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Manual Mill</span>
+						<img class="shop-item-image" src="img/manual_mill.jpg" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P190</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Panda Salt and Pepper Shaker</span>
+						<img class="shop-item-image" src="img/Panda Salt and Pepper Shaker.jpeg" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P200</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Turtle Tea Brewer</span>
+						<img class="shop-item-image" src="img/Turtle Tea Brewer.JPG" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P210</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Dinosaur Oven Mitten</span>
+						<img class="shop-item-image" src="img/Dinosaur Oven Mitten.JPG" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P110</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+					<div class="shop-item">
+						<span class="shop-item-title">Magic Lamp Oil Dispenser</span>
+						<img class="shop-item-image" src="img/Magic Lamp Dispenser.JPG" />
+						<div class="shop-item-details">
+							<span class="shop-item-price">P260</span>
+							<button class="shop-item-button" type="button">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="cart-section">
+				<h2 class="section-header">Cart</h2>
+				<div class="cart-row">
+					<span class="cart-item cart-header cart-column">ITEM</span>
+					<span class="cart-price cart-header cart-column">PRICE</span>
+					<span class="cart-quantity cart-header cart-column">QUANTITY</span>
+				</div>
+				<div class="cart-items">
+					<div class="cart-row">
+						<div class="cart-item cart-column">
+							<img class="cart-item-image" src="img/egg yolk separator.jpg" width="100" height="100" />
+							<span class="cart-item-title">Egg Yolk Separator</span>
+						</div>
+						<span class="cart-price cart-column">P100</span>
+						<div class="cart-quantity cart-column">
+							<input class="cart-quantity-input" type="number" value="1" />
+							<button class="btn remove" type="button">REMOVE</button>
+						</div>
+					</div>
+					<div class="cart-row">
+						<div class="cart-item cart-column">
+							<img class="cart-item-image" src="img/loch ness ladle.jpg" width="100" height="100" />
+							<span class="cart-item-title">Loch Ness Ladle</span>
+						</div>
+						<span class="cart-price cart-column">P120</span>
+						<div class="cart-quantity cart-column">
+							<input class="cart-quantity-input" type="number" value="2" />
+							<button class="btn remove" type="button">REMOVE</button>
+						</div>
+					</div>
+				</div>
+				<div class="cart-total">
+					<strong class="cart-total-title">Total</strong>
+					<span class="cart-total-price">P340</span>
+				</div>
+			</section>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
