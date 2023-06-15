@@ -1,0 +1,6 @@
+right click => copy => copy selector
+
+    <h1 id="page-title">The DOM</h1>
+-The id "page-title" should only be mentioned once in the entire HTML page.
+
+-nodelist and html list are different

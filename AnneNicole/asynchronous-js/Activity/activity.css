@@ -1,0 +1,45 @@
+.container {
+  margin-top: 20px;
+}
+.card {
+  margin-bottom: 20px;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+.card-link {
+  color: #ff8551;
+  text-decoration: none;
+}
+
+.card {
+  background-color: #ffdede;
+  width: 190px;
+  margin-bottom: 40px;
+  outline-style: solid;
+  outline-color: #ffeebb;
+}
+
+.prod-picture {
+  width: 170px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+}
+
+.page-title {
+  margin: 40px;
+  text-align: center;
+  color: #faf0e4;
+  font-size: 50px;
+}
+
+body {
+  background-color: #ff8551;
+}
+
+p {
+  font-size: 12px;
+}

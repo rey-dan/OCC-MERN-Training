@@ -1,0 +1,92 @@
+You can use:
+
+1. Letters (both uppercase and lowercase): myVariable, userName
+2. Numbers (but not as the first character): count1, myValue2
+3. Underscore (_): first_name, _privateVariable
+4. Dollar sign ($): $element, total$
+5. Unicode characters (although it's generally recommended to stick to ASCII characters for better compatibility): δelta, λambda
+
+
+Functions and Methods are different:
+
+A function declaration defines a named function using the function keyword. It has a distinct name and can be invoked by using the function name followed by parentheses. For example:
+
+A method is a function that is associated with an object or a class. It is called on an instance of the object or the class itself and can access the object's properties and other methods. In JavaScript, methods are typically defined as functions within the context of an object or a class.
+-built in
+-uses dot notation
+
+
+strings can contain any type of characters.
+
+
+But we will be looking at those throughout the course.
+
+
+Type Conversion (explicit type conversion):
+Type conversion, also known as explicit or manual type conversion, refers to the deliberate conversion of one data type to another using built-in JavaScript functions or methods. It involves explicitly specifying the desired target data type.
+
+Type Coercion (implicit type conversion  ):
+Type coercion, on the other hand, is an implicit or automatic conversion of one data type to another that occurs automatically during operations or comparisons. It happens when JavaScript automatically converts a value from one type to another to perform a specific operation.
+
+
+Control flow
+-for loops - everytime we perform a code block that is one iteration through the data, or one cycle through
+
+-while loop
+
+-dowhile loop - execute a block of code inside the loop first regardless of whether the loop is true or false
+
+-if statements
+-use double quotes when using single quotes within the enclosed
+
+-if else / if else if
+
+
+//Logical operators
+-AND && 
+-OR ||
+-
+
+-BREAK statement - breaks the loop even before all iterations and cycle through is complete
+
+-CONTINUE statement - redirects to next iteration of the loop not finishing the code after it
+
+-var ignores block scope
+
+//function declaration is hoisted by JS (invoked first before the declaration of the function) (does not need to end with ;)
+
+//function expression is not hoisted by JS (must end with ;)
+Using a "return" allows us to reuse a value that a function brings back to us.
+
+//Arrow function (must end with ;)
+
+//function - invoked on its own using ()
+//method - involed using () as well. but  defined on an object or datatype using a dot notation
+
+//Callback functions - normal functions that we pass into another function or another method as an arguement
+
+//Methods are still just functions but it's defined on an object. Much like the toUpperCase() is defined on a string object built into JavaScript
+
+//A regular function isn't defined inside an object. A method is.
+
+//"this" refers to the root element
+//when we use arrow functions, the value of "this" does not change from the value it was in the point in the code that the arrow function was invoked.
+
+
+PRIMITIVE TYPES (STORED ON THE STACK - much quicker - but smaller):
+-Numbers
+-strings
+-booleans
+-null
+-undefined
+-symbolds
+
+REFERENCE TYPES (STORED ON THE HEAP - much slower - much bigger):
+-all types of objects
+    ~object literals
+    ~arrays
+    ~functions
+    ~dates
+    ~all other objects
+
+

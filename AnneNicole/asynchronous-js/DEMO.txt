@@ -1,0 +1,88 @@
+Node and Express JS
+
+Teaching Demo (Webinar Approach)
+
+Teaching in a class setup
+- Webinar (similar to a crash course/deep dive)
+
+1. Prepare
+   -Sequence of topics (unpacking, scaffolding)
+   -managing the participants (class management)
+     -creative and adaptive
+
+Audience: Adult learners with some knowledge about programming in general.
+Duration: 40-45 minutes
+Title: Creating a database using MongoDB
+
+Web Programming
+  WebDevelopment
+    Frontend Development
+      Creating a static website
+        HTML
+
+Persistent Data Storage
+
+  Databases
+    Relational Database
+
+    NoSQL Database (Not-Only SQL)
+      Creating a database using MongoDB
+
+
+
+Plan the entries to your table
+
+The entries in your table
+
+name
+landline
+mobile number
+mobile number2
+
+
+Relational
+database
+    -table
+        -record (rows and columns)
+
+NoSql
+Database
+    -collection
+        documents
+
+users collection:
+
+]
+{"name": "John Doe",
+`"email": "jd@gmail.com"
+},
+{
+  "name": "Jane Doe",
+  "email": "jane@gmail.com",
+  "email2": 
+
+}
+
+]
+
+
+
+
+Intro (hook)
+  - THIS IS A FREEBIE PRODUCT
+  - plays a crucial role on expectation settings
+  - Make it seem exciting
+Discussion
+Wrap-up (Q & A)
+
+=== How do we say that the webinar is effective
+
+-If participants were able to come-up wih at least >=80% of the expected output
+
+-There's lively interaction between the instructor and the participants (Rapport)
+   - However we encourage "smart" questions
+
+-Less disruptions in terms asking the instructor to repeat important steps.
+
+
+If >=60% of the participants questions were addressed properly
