@@ -1,0 +1,36 @@
+require("dotenv").config();
+
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
+app.get("/api/workouts", (req, res) => {
+  res.json({ mssg: "Get all workouts" });
+});
+
+app.get("/api/workouts/id", (req, res) => {
+  res.json({ mssg: "GET a single workout" });
+});
+
+app.post("/api/workouts", (req, res) => {
+  res.json({ mssg: "POST a new workout" });
+});
+
+app.delete("/api/workouts/:id", (req, res) => {
+  res.json({ mssg: "DELETE a new workout" });
+});
+
+app.patch("/api/workouts/:id", (req, res) => {
+  res.json({ mssg: "UPDATE a new workout" });
+});
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log("listening on port", port);
+});

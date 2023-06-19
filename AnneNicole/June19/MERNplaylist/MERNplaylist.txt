@@ -1,0 +1,107 @@
+
+WHY CAN'T I JUST REACH OUT DIRECTLY TO MONGODB?
+=You'd be exposing sensitive data in your front-end code in the browser. Such as an app username and password access your database.
+=By putting that logic in the backend instead, you're hiding that sensitive code from people who use your website.
+
+
+///////////////
+MERN Stack Tutorial #2 - Express App Setup
+
+1. Create backend folder
+  a. Create server.js file inside
+
+2. Create a package.json file inside backend folder
+  -keep track of dependencies
+  -register own custom scripts
+  a. go to backend folder on terminal
+  b. npm init -y
+
+3. Install Express package
+  a. go to backend folder on terminal
+  b. npm install express
+  c. create the express application inside server.js file
+      const express = require('express')
+
+4. Node modules folder contains all the express package and all its dependencies are installed
+
+5. Start-up the Express app
+    const app = express() // creates the express app
+
+
+6. Listen for requests. Listen to a certain port number.
+    app.listen(4000, ()=>{
+      console.log('listening on port 4000')
+    })
+
+    a. node server.js
+
+7. npm install -g nodemon //instead of node server.js
+    -nodemon server.js
+    -detects change and reruns file automatically
+
+8. Create script inside package.json file
+    -"dev": "nodemon server.js"
+    -shortcut for "nodemon server.js"
+    -npm run dev // shortcut
+
+9. React to requests using route handler
+    -'/' the root of the domain
+    -app.get('/', (req, res)=>{
+      res.json({mssg: 'Welcome to the app'})
+    })
+
+
+----------
+
+10. When pushing project in repo like Github, the environment variables can remain hidden. Environment variables will remain hidden.
+    -database connection String
+    -authentication secret
+    a. create ".env" file in backend folder
+    b. PORT=4000
+    -when pushing code to Github, add .env file to gitignore file. This file won't be pushed up. everything remains private.
+
+
+11. To access environment variables (.env)
+  -cancel out of nodemon (ctrl + c)
+  -npm install dotenv
+  -dotenv is a package that loads environment variables from .env file into the "process.env" object. Available globally in a node.js environment.
+  -put "process.env" in server.js file
+  -require('dotenv').config()
+
+FROM THIS:
+  app.listen(4000, () => {
+  console.log("listening on port", 4000);
+});
+
+TO THIS:
+app.listen(process.env.PORT, () => {
+  console.log("listening on port", process.env.PORT);
+});
+
+
+--------
+12. Use postman to get GET, POST, DELETE, etc requests
+
+13. Middleware code that executes between us getting a request on the server and us sending a response.
+
+//Global middleware
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
+
+  -next() allows this middleware to move on to the next middleware
+
+app.get("/", (req, res) => {
+  res.json({ msg: "Welcome to the app" });
+});
+
+
+
+
+================================
+
+
+Mongoose - package ODM library (object data modelling). wraps mongodb with an extra layer that allows us to use methods to read and write database documents. give a way to declare models and schemas to ensure a more strict data structure. MongoDB alone does not adhere to structured data.
+
+  -npm install mongoose
