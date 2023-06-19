@@ -1,0 +1,189 @@
+Need to know before using MongoDB:
+
+1. JS
+2. Node.JS
+
+Tools to be downloaded:
+1. MongoDB Compass
+2. MongoDB Shell
+
+
+*Collections contains the documents
+*Documents contains the BSON
+*BSON - Binary JSON
+
+*Every document has a unique id to identify them. This property is a special object id type in MongoDB. It's assigned to the document by MongoDB itself
+
+
+
+
+
+
+
+
+
+Complete MongoDB Tutorial #5 - Using the MongoDB Shell
+
+
+mongosh
+Show dbs
+Use bookstore
+Use test
+Db
+Cls
+Show collections
+Var name = “yoshi”
+Name = “mario”
+Exit
+
+
+Complete MongoDB Tutorial #6 - Adding New Documents
+
+db.books
+bookstore.books
+ db.books.insertOne({title: "The Color of Magic", author: "Terry P", pages:300, rating: 7, genres: ["fantasy", "magic"]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("648af2b8a01689fc8ed26922")
+}
+ db.authors.insertOne({name: "Brandon Sanderson", age: 60})
+{
+  acknowledged: true,
+  insertedId: ObjectId("648af31aa01689fc8ed26923")
+}
+
+
+
+ db.books.insertMany([{title: "The Light Fantastic", author: "Terry Pratchett", pages: 250, rating: 7, genres: ["fantasy","adventure"]},{title: "The Dark Scary", author: "Terry Aunor", pages: 370, rating: 5, genres: ["fantasy","adventure"]} ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("648af487a01689fc8ed26924"),
+    '1': ObjectId("648af487a01689fc8ed26925")
+  }
+}
+
+
+
+
+
+Complete MongoDB Tutorial #7 - Finding Documents
+
+ db.books.find()
+It  (next 20)
+ db.books.find({author: "Terry Pratchett"})
+ db.books.find({author: "Terry Pratchett", rating: 7})
+ db.books.find({author: "Francine Pascal"}, {title: 1, author: 1})
+ db.books.find({}, {title: 1, author: 1})
+ db.books.findOne({_id:ObjectId("648af2b8a01689fc8ed26922")})
+ db.books.findOne({author:”Terry Pratchett”})
+
+Complete MongoDB Tutorial #8 - Sorting & Limiting Data
+
+ db.books.find().count()
+7
+ db.books.find({author: "Terry Pratchett"}).count()
+3
+ db.books.find().limit(3)
+ db.books.find().limit(3).count()
+ db.books.find().sort({title: 1})
+ db.books.find().sort({title: -1})
+ db.books.find().sort({title: 1}).limit(3)
+
+
+Complete MongoDB Tutorial #9 - Nested Documents
+
+
+
+Key and value pairs. Keys are the field names in MongoDB terminology.
+
+
+
+
+
+*Nested and Embedding documents
+ -read performance
+
+
+db.books.insertOne({title: "The Way of Kings", author: "Brandon Sanderson", rating: 9, pages: 400, genres: ["fantasy"], reviews: [{name: "Yoshi", body: "Great book!"}, {name: "Mario", body: "So so"}]})
+
+db.books.insertMany({title: "The Way of Kings", author: "Brandon Sanderson", rating: 9, pages: 400, genres: ["fantasy"], reviews: [{name: "Yoshi", body: "Great book!"}, {name: "Mario", body: "So so"}]})
+
+
+Complete MongoDB Tutorial #10 - Operators & Complex Queries
+
+
+
+
+Operators:  $
+ db.books.find({rating: {$gt: 7}})
+ db.books.find({rating: {$lt: 7}})
+ db.books.find({rating: {$lte: 7}})
+ db.books.find({rating: {$gte: 7}})
+
+ db.books.find({rating: {$gt: 7}, author: "Bob Ong"})
+
+ db.books.find({rating: {$lt: 7}, author: "Bob Ong"})
+ db.books.find({$or: [{rating: 7}, {rating: 9}]})
+ db.books.find({$or: [{rating: 9}, {author: "Bob Ong"}]})
+ db.books.find({$or: [{pages: {$lt: 300}}, {pages: {$gt: 400}}]})
+
+
+
+Complete MongoDB Tutorial #11 - Using $in & $nin
+
+
+ db.books.find({rating: {$in: [5,6,7,8,9]}})
+ db.books.find({rating: {$nin: [7,8,9]}})
+
+
+
+
+
+
+
+Complete MongoDB Tutorial #12 - Querying Arrays
+
+
+ db.books.find({genres: "comedy"})
+
+ db.books.find({genres: "fantasy"})
+
+ db.books.find({genres: ["fantasy"]})
+
+ db.books.find({genres: ["fantasy", "adventure"]})
+
+ db.books.find({genres: {$all: ["fantasy", "adventure"]}})
+
+ db.books.find({"reviews.name": "Luigi"})
+
+
+
+
+Complete MongoDB Tutorial #13 - Deleting Documents
+
+
+db.books.deleteOne({_id: ObjectId("648b0482869ca18cae696dba"),})
+
+ db.books.deleteMany({author: "Brandon Sanderson"})
+
+
+Complete MongoDB Tutorial #14 - Updating Documents
+
+
+ db.books.updateOne({_id: ObjectId("648b067a494403d0ebac0290")}, {$set: {rating: 8, pages: 360}})
+
+ db.books.updateMany({author: 'Brandon Sanderson'}, {$set: {author: "Terry Pratchett"}})
+
+ db.books.updateOne({_id: ObjectId("648b06d7494403d0ebac0292")}, {$inc: {pages: 2}})
+
+ db.books.updateOne({_id: ObjectId("648b06d7494403d0ebac0292")}, {$inc: {pages: -2}})
+
+ db.books.updateOne({_id: ObjectId("648b067a494403d0ebac0290")}, {$pull: {genres: "adventure"}})
+
+ db.books.updateOne({_id: ObjectId("648b067a494403d0ebac0290")}, {$push: {genres: "adventure"}})
+
+ db.books.updateOne({_id: ObjectId("648b067a494403d0ebac0290")}, {$push: {genres: {$each: ["1", "2"]}}})
+
+
+
