@@ -1,0 +1,97 @@
+Alan Beraquit 8:48 AM
+1) Identify the entities involved in the e-commerce platform, such as customers, products, categories, orders, and reviews.
+
+Customers
+-First name
+-Last name
+-Email address
+-Phone number
+-Delivery address
+-Payment method
+
+products
+-products selling
+
+categories
+-product category
+
+orders
+-in cart basket
+-past orders
+-cancelled orders
+
+Reviews
+-star rating given
+-written reviews given
+-photos/videos of product for review
+
+
+
+2) Determine the relationships between these entities and define the cardinality of each relationship (one-to-one, one-to-many, or many-to-many).
+
+Customers (one to many)
+Products (one to many)
+Categories (one to many)
+Orders (one to many)
+Reviews (one to many)
+
+
+
+
+3) Design a data model using either the embedded or reference approach based on the following requirements:
+ a. Customers can place multiple orders, and each order can contain multiple products. 
+ b. Each product belongs to a specific category, and a category can have multiple products. 
+ c. Customers can write reviews for products, and each product can have multiple reviews.
+
+{
+  "_id": {
+    "$oid": "648b0482869ca18cae696dba"
+  },
+  "CustomerName": "Deborah Hawkins",
+  "EmailAddress": "Terry Pratchett",
+  "PhoneNumber": "545-5429-45",
+  "DeliveryAddress": "400 Lane street, Pasay city",
+  "PaymentMethod": [
+    {
+      "Method": "Gcash",
+      "AccountNumber": "06546134654"
+    },
+    {
+      "Method": "Debit card",
+      "AccountNumber": "4565454654566"
+    }
+  ],
+  "AsSeller": [
+    {
+      "ProductSelling": "Dolls",
+      "ProductCategory": "Kids",
+      "Price": "Php 5,000"
+    }
+  ],
+  "InCartBasket": [
+    {
+      "ProductName": "Japanese Dashi",
+      "Price": "Php 500",
+      "Quantity": "5"
+    }
+  ],
+  "OrdersCompleted: [
+    {
+      "ProductName": "Japanese Dashi",
+      "Price": "Php 500",
+      "DateDelivered": "June 19, 2023",
+      "StarRatingGiven": "Five stars",
+      "BuyerReview": "Delicious",
+      "Quantity": "5"
+
+      
+    }
+  ]
+}
+
+
+4) Decide on the key attributes for each entity and incorporate them into the data model.
+
+
+5) Consider the data access patterns and query requirements for the e-commerce platform. Ensure that the data model supports efficient and effective data retrieval.
+

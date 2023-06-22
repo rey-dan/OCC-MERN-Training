@@ -1,0 +1,65 @@
+1) Identify the entities involved in the e-commerce platform, such as customers, products, categories, orders, and reviews.
+
+2) Determine the relationships between these entities and define the cardinality of each relationship (one-to-one, one-to-many, or many-to-many).
+
+3) Design a data model using either the embedded or reference approach based on the following requirements:
+ a. Customers can place multiple orders, and each order can contain multiple products. 
+ b. Each product belongs to a specific category, and a category can have multiple products. 
+ c. Customers can write reviews for products, and each product can have multiple reviews.
+
+4) Decide on the key attributes for each entity and incorporate them into the data model.
+
+5) Consider the data access patterns and query requirements for the e-commerce platform. Ensure that the data model supports efficient and effective data retrieval.
+
+
+
+{
+  "_id": {
+    "$oid": "648b0482869ca18cae696dba"
+  },
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "orders": [
+    {
+      "order_id": 1001,
+      "products": [
+        {
+          "product_id": 1001,
+          "price": "Php 5,000"
+        },
+                {
+          "product_id": 1001,
+          "price": "Php 5,000"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "order_id": 1001,
+      "comment": "Great product",
+      "rating": 5
+    }
+  ]
+}
+
+
+
+
+
+1. Find all posts by a specific author:
+    db.posts.find({author: "John Doe"})
+
+2. Find all posts with comments made by a specific author
+db.posts.find({"comments.author": "Jane Smith"})
+
+3. Count the number of comments across all posts:
+
+con.posts.aggregate([
+
+])
+
+
+
+
+
