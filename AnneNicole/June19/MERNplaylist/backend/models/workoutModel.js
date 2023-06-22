@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
+//function to create new schema
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema(
   {
+    //Does not allow if one of the fields are missing
     title: {
       type: String,
       required: true,
@@ -21,4 +23,5 @@ const workoutSchema = new Schema(
   { timestamps: true }
 );
 
+//automatically creates a collection for us based on its name "Workout". It pluralizes this and builds that collection in the database for us.
 module.exports = mongoose.model("Workout", workoutSchema);

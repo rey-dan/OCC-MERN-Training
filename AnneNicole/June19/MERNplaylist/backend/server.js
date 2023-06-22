@@ -6,6 +6,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user");
 
 //The next line creates an instance of the Express application by calling the express() function. This instance represents our web server.
 //By calling express(), we invoke the Express constructor function to create an application object. This app object will have various methods and properties that we can use to define routes, handle requests, and perform other server-related operations.
@@ -22,13 +23,17 @@ const app = express();
 app.use(express.json());
 
 //middleware
+//what is a request and response cycle
+//The request and response cycle, also known as the client-server interaction cycle, is the fundamental process through which clients (such as web browsers or applications) communicate with servers over the internet. It involves the exchange of HTTP (Hypertext Transfer Protocol) messages between the client and the server. Here's an overview of the request and response cycle:
+
 app.use((req, res, next) => {
-  console.log(req.path, req.method);
+  console.log(req, res);
   next();
 });
 
 //app.use("/api/workouts", workoutRoutes); - This middleware mounts the workoutRoutes module at the specified path (/api/workouts). All routes defined in the workoutRoutes module will be prefixed with /api/workouts. For example, if there is a route defined as / in the workoutRoutes module, it will be accessible as /api/workouts/.
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 //Connect to DB
 mongoose
