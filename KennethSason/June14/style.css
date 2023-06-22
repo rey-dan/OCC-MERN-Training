@@ -1,23 +1,28 @@
-body{
+body {
     background: #626262;
 }
-.card{
+
+.card {
     background: #b3b3b3;
     width: 100%;
 }
-.img-con{
+
+.img-con {
     height: 20%;
     width: 100%;
     background: white;
 }
-.card-img{
+
+.card-img {
     object-fit: contain;
     height: 250px;
     background-size: cover;
 }
-.fa-star{
-    color:rgb(222, 222, 3);
+
+.fa-star {
+    color: rgb(222, 222, 3);
 }
-.navbar{
+
+.navbar {
     background-color: #d6d2d2;
 }
