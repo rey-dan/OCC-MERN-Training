@@ -1,0 +1,759 @@
+MERN Stack
+
+Data Modelling
+
+Users Collection
+[
+  {
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "age": 30
+  },
+  {
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "age": 25
+  },
+  {
+    "name": "Bob Johnson",
+    "email": "bjohnson@example.com",
+    "age": 40
+  }
+]
+
+Create (Insert)
+db.users.insertOne({
+  name: "John",
+  email: "john@example.com",
+  age: 35
+});
+
+
+Read
+// Find all documents in the "users" collection
+db.users.find();
+
+// Find documents where age is greater than 30
+db.users.find({ age: { $gt: 30 } });
+
+// Find a document by its email
+db.users.findOne({ email: "john@example.com" });
+
+Update
+// Update the email of a user
+db.users.updateOne(
+  { name: "John" },
+  { $set: { email: "newemail@example.com" } }
+);
+
+Delete
+// Delete a document by its name
+db.users.deleteOne({ name: "John" });
+
+
+
+Modeling relationships between entities using 
+references and embedded documents
+
+Model a one-to-many relationship between a "users" collection and a "posts" collection using references. Show how the "posts" collection references the "users" collection using ObjectId values.
+
+// Create users collection
+db.users.insertOne({
+  _id: ObjectId("60c8692a4ab31b33bc2a9b01"),
+  name: "John Doe"
+})
+
+
+// Create posts collection with references to users
+db.posts.insertOne({
+  title: "Introduction to MongoDB Atlas",
+  content: "Lorem ipsum dolor sit amet...",
+  author: ObjectId("60c8692a4ab31b33bc2a9b01")
+})
+
+db.posts.insertOne({
+  title: "Introduction to Node JS",
+  content: "Lorem ipsum dolor sit amet...",
+  author: ObjectId("60c8692a4ab31b33bc2a9b01")
+})
+
+
+
+Use Cases for Embedded Approach:
+1. Blogging Platform:
+
+Posts Collection
+{
+  "_id": ObjectId("60c86a8b4ab31b33bc2a9b10"),
+  "title": "Introduction to MongoDB",
+  "content": "MongoDB is a document-oriented database...",
+  "comments": [
+    {
+      "author": "John Doe",
+      "comment": "Great article!"
+    },
+    {
+      "author": "Jane Smith",
+      "comment": "Very informative. Thank you!"
+    }
+  ]
+}
+
+The embedded approach is used here because comments are closely tied to the blog post and typically accessed together. Embedding comments within the blog post document eliminates the need for additional queries to retrieve comments and simplifies the data model.
+
+2. E-commerce Platform:
+ 	Use Case: Modeling products and reviews.
+
+Products Collections
+{
+  "_id": ObjectId("60c86a8b4ab31b33bc2a9b11"),
+  "name": "Smartphone",
+  "description": "High-performance smartphone...",
+  "reviews": [
+    {
+      "rating": 5,
+      "comment": "Excellent product!",
+      "author": "John Doe"
+    },
+    {
+      "rating": 4,
+      "comment": "Good value for money.",
+      "author": "Jane Smith"
+    }
+  ]
+}
+
+
+Use Cases for Reference Approach:
+1.Social Networking Platform:
+	Users Collection
+
+{
+  "_id": ObjectId("60c86a8b4ab31b33bc2a9b12"),
+  "name": "Alice",
+  "friends": [
+    ObjectId("60c86a8b4ab31b33bc2a9b13"), 
+    ObjectId("60c86a8b4ab31b33bc2a9b14")
+  ]
+}
+
+{
+  "_id": ObjectId("60c86a8b4ab31b33bc2a9b12"),
+  "name": "Ron",
+  "friends": [
+    ObjectId("60c86a8b4ab31b33bc2a9b13"), 
+    ObjectId("60c86a8b4ab31b33bc2a9b14")
+  ]
+}
+
+
+2. Music Streaming Service:
+	Use Case: Modeling songs and artists.
+
+{
+  "_id": ObjectId("60c86a8b4ab31b33bc2a9b15"),
+  "title": "Song Title",
+  "artist": ObjectId("60c86a8b4ab31b33bc2a9b16")
+}
+
+{
+  "_id": ObjectId("60c86a8b4ab31b33bc2a9b16"),
+  "name": "Artist Name",
+  "genre": "Pop"
+}
+
+Activity: Data Modeling Challenge
+Instructions:
+
+1) Identify the entities involved in the e-commerce platform, such as customers, products, categories, orders, and reviews.
+
+2) Determine the relationships between these entities and define the cardinality of each relationship (one-to-one, one-to-many, or many-to-many).
+
+3) Design a data model using either the embedded or reference approach based on the following requirements:
+	a. Customers can place multiple orders, and each order can contain multiple products. 
+	b. Each product belongs to a specific category, and a category can have multiple products. 
+	c. Customers can write reviews for products, and each product can have multiple reviews.
+
+4) Decide on the key attributes for each entity and incorporate them into the data model.
+
+5) Consider the data access patterns and query requirements for the e-commerce platform. Ensure that the data model supports efficient and effective data retrieval.
+
+== No need to do the items below ===
+6) Document your data model using an appropriate diagramming tool, such as a UML class diagram, to visually represent the entities, relationships, and attributes.
+
+7) Write a brief explanation of your data model, highlighting the reasons for choosing the embedded or reference approach for each relationship.
+
+
+
+
+Customers Collection
+
+customers = [
+	{
+		"_id": 1,
+		"name": "John Doe",
+		"email": "jdoe@example.com",
+		"orders": [
+			{
+				"order_id": 1001,
+				"products": [
+					{
+                        "product_id": 1001,
+                        "name": "Product A",
+                        "category": "Category X"
+					},
+					{
+                        "product_id": 1002,
+                        "name": "Product B",
+                        "category": "Category Y"
+                    }
+				]
+			},
+
+            {
+                "order_id": 102,
+                "products": [
+                    {
+                        "product_id": 1003,
+                        "name": "Product C",
+                        "category": "Category Z"
+                    }
+                ]
+            }
+		],
+		"reviews":[
+            {
+                "product_id": 1001,
+                "comment": "Great product!",
+                "rating": 5
+            },
+            {
+                "product_id": 1002,
+                "comment": "Good quality.",
+                "rating": 4
+            }
+		]
+
+	},
+
+	{
+        "_id": 2,
+        "name": "Jane Smith",
+        "email": "jane@example.com",
+        "orders": [
+            {
+                "order_id": 103,
+                "products": [
+                    {
+                        "product_id": 1001,
+                        "name": "Product A",
+                        "category": "Category X"
+                    },
+                    {
+                        "product_id": 1003,
+                        "name": "Product C",
+                        "category": "Category Z"
+                    }
+                ]
+            }
+        ],
+        "reviews": []
+    }
+
+]
+
+
+# Products Collection
+products = [
+    {
+        "_id": 1001,
+        "name": "Product A",
+        "category": "Category X"
+    },
+    {
+        "_id": 1002,
+        "name": "Product B",
+        "category": "Category Y"
+    },
+    {
+        "_id": 1003,
+        "name": "Product C",
+        "category": "Category Z"
+    }
+]
+
+
+
+# Categories Collection
+categories = [
+    {
+        "_id": "Category X",
+        "name": "Category X"
+    },
+    {
+        "_id": "Category Y",
+        "name": "Category Y"
+    },
+    {
+        "_id": "Category Z",
+        "name": "Category Z"
+    }
+]
+
+# Orders Collection - Not required in the embedded approach since it's embedded within the customers collection.
+
+# Reviews Collection - Not required in the embedded approach since it's embedded within the customers collection.
+
+
+Advanced Querying & Query Projections
+
+
+Examples of query operators include:
+Comparison operators: $eq, $ne, $gt, $lt, $gte, $lte
+Logical operators: $and, $or, $not, $nor
+Array operators: $in, $nin, $all, $size, $elemMatch
+Regular expression operator: $regex
+Existence operators: $exists
+Type operators: $type
+
+
+Utilizing aggregate functions for advanced data processing
+
+Examples of aggregate functions include:
+
+$match: Filters documents based on specified conditions.
+$group: Groups documents by a specific field and calculates aggregate values.
+$sort: Sorts documents based on specified fields and sort orders.
+$project: Shapes the output of the aggregation pipeline by including or excluding fields.
+$limit: Limits the number of documents in the output.
+$skip: Skips a specified number of documents in the output.
+
+Use Case 1: Social Media Posts and Comments (Embedded)
+
+// Posts Collection
+[
+  {
+    "_id": ObjectId("61df5c3a8a7363789b215b01"),
+    "title": "My First Post",
+    "content": "This is my first post on the social media platform.",
+    "author": "John Doe",
+    "comments": [
+      {
+        "text": "Great post!",
+        "author": "Jane Smith",
+        "timestamp": ISODate("2022-01-01T09:00:00Z")
+      },
+      {
+        "text": "I agree with you.",
+        "author": "Alex Johnson",
+        "timestamp": ISODate("2022-01-01T10:00:00Z")
+      }
+    ]
+  },
+  {
+    "_id": ObjectId("61df5c3a8a7363789b215b02"),
+    "title": "Interesting Read",
+    "content": "Check out this amazing article I found.",
+    "author": "Jane Smith",
+    "comments": [
+      {
+        "text": "Thanks for sharing!",
+        "author": "John Doe",
+        "timestamp": ISODate("2022-01-02T08:30:00Z")
+      }
+    ]
+  }
+]
+
+1.Find all posts by a specific author: 
+	db.posts.find({ author: "John Doe" })
+2. Find all posts with comments made by a specific author:
+	db.posts.find({ "comments.author": "Jane Smith" })
+
+Count the number of comments across all posts:
+
+codedb.posts.aggregate([
+  { $project: { numComments: { $size: "$comments" } } },
+  { $group: { _id: null, totalComments: { $sum: "$numComments" } } }
+])
+
+
+
+Backend Development using Node and Express.js
+
+Monolithic (full application) vs. Decoupled Approach
+								- BE Node Express
+								- FE React
+
+Node and Express JS
+- Node.js is the backend language
+- Express.js is the framework
+
+Define the backend (Node and Express)
+define the database (MongoDB)
+define the frontend/ui (.ejs, .pug)
+
+HR and Admin System
+School System
+
+
+PHP and Laravel
+- PHP backend language
+- Laravel is the framework
+
+MVC - Model View Controller
+
+- separation of concerns
+
+Model (database?)
+View (what the actual users are seeing)
+Controller - (logic of the program)
+
+Fullstack Blog Application
+
+1) Make the Backend (API Endpoints)
+	a. Blog API
+
+Planning our Application (Blog API)
+
+User Authentication and Authorization:
+
+1.User Registration
+	HTTP Method: POST
+	Endpoint: /api/auth/register
+
+2.User Login
+	HTTP Method: POST
+	Endpoint: /api/auth/login
+
+3.Change User Password
+	HTTP Method: PUT
+	Endpoint: /api/auth/change-password
+
+4.Change User Email
+	HTTP Method: PUT
+	Endpoint: /api/auth/change-email
+
+Blog Posts:
+	Create a New Blog Post
+	HTTP Method: POST
+	Endpoint: /api/blogPosts
+
+	Retrieve All Blog Posts
+	HTTP Method: GET
+	Endpoint: /api/blogPosts
+
+	Retrieve a Specific Blog Post by ID
+	HTTP Method: GET
+	Endpoint: /api/blogPosts/:id
+
+	Update a Blog Post
+	HTTP Method: PUT
+	Endpoint: /api/blogPosts/:id
+
+	Delete a Blog Post
+	HTTP Method: DELETE
+	Endpoint: /api/blogPosts/:id
+
+
+Comments:
+	Add a Comment to a Blog Post
+	HTTP Method: POST
+	Endpoint: /api/comments
+
+Retrieve All Comments for a Specific Blog Post
+	HTTP Method: GET
+	Endpoint: /api/comments?blogPostId=:id
+
+Update a Comment
+	HTTP Method: PUT
+	Endpoint: /api/comments/:id
+
+Delete a Comment
+	HTTP Method: DELETE
+	Endpoint: /api/comments/:id
+
+
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "password123",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "password": "password456",
+      "role": "User"
+    }
+  ],
+
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Introduction to Blogging",
+      "authorId": 1,
+      "content": "This is a blog post introducing the concept of blogging and its benefits.",
+      "categories": ["Technology", "Writing"],
+      "tags": ["Blogging", "Content Creation"]
+    },
+    {
+      "id": 2,
+      "title": "Tips for Writing Engaging Blog Posts",
+      "authorId": 2,
+      "content": "Here are some tips to help you write engaging and captivating blog posts.",
+      "categories": ["Writing", "Content Creation"],
+      "tags": ["Blogging", "Writing Tips"]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "authorId": 2,
+      "content": "Great introduction to blogging! Looking forward to more posts.",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "authorId": 1,
+      "content": "Excellent tips for writing engaging blog posts. Thanks for sharing!",
+      "postId": 2
+    }
+  ],
+  "categories": ["Technology", "Writing", "Content Creation"],
+  "tags": ["Blogging", "Content Creation", "Writing Tips"]
+}
+
+
+Asset Management App - (Backend API for the Asset Management App)
+
+1. User Authentication:
+User registration and login
+User profile management
+
+2.Asset Management:
+View a list of available assets for borrowing
+Check the availability and status of assets
+Filter and search assets based on various criteria
+
+3.Borrowing Assets:
+Select an available asset for borrowing
+Specify the duration or return date for borrowing
+Confirm the borrowing request
+
+4.Returning Assets:
+Mark borrowed assets as returned
+
+5.Notifications:
+Send notifications to users regarding borrowed assets, due dates, or overdue returns
+
+6.User History and Tracking:
+Maintain a history of borrowed and returned assets for each user
+Display the borrowing and return history in the user profile
+
+7.Reminders:
+Send reminders to users for upcoming due dates of borrowed assets
+
+8.Admin Dashboard:
+Provide an admin dashboard to manage borrowed assets
+View a list of all borrowed assets and their status
+Mark assets as returned and update their availability
+
+9.Reporting:
+Generate reports on borrowed assets, overdue returns, and borrowing trends
+
+10.Role-based Access Control:
+Implement different user roles such as administrators and regular users
+Assign different access levels and permissions based on user roles
+
+
+User Collection
+
+[
+  {
+    "_id": "user1",
+    "username": "johnDoe",
+    "password": "hashedPassword",
+    "email": "johndoe@example.com",
+    "role": "regular"
+  },
+  {
+    "_id": "user2",
+    "username": "adminUser",
+    "password": "hashedPassword",
+    "email": "adminuser@example.com",
+    "role": "admin"
+  }
+]
+
+
+Asset Collection
+[
+  {
+    "_id": "asset1",
+    "name": "Laptop",
+    "description": "MacBook Pro",
+    "availability": true
+  },
+  {
+    "_id": "asset2",
+    "name": "Projector",
+    "description": "Epson PowerLite",
+    "availability": false
+  },
+  {
+    "_id": "asset3",
+    "name": "Camera",
+    "description": "Canon EOS",
+    "availability": true
+  }
+]
+
+Transaction Collection
+[  
+	{    
+		"_id": "transaction1",    
+		"user": "user1",    
+		"asset": "asset2",    
+		"borrowedAt": "2023-06-12T10:00:00Z",    
+		"returnedAt": "2023-06-13T12:00:00Z"  
+	},  
+
+	{    
+		"_id": "transaction2",    
+		"user": "user1",    
+		"asset": "asset3",    
+		"borrowedAt": "2023-06-10T14:00:00Z",    
+		"returnedAt": "2023-06-12T16:00:00Z"  
+	}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2) Make the Frontend
+
+
+Hotel Room Reservation System
+
+Entities and Attributes:
+1.User:
+	Attributes:
+		ID (unique identifier)
+		Name
+		Email
+		Password (hashed)
+		Role (admin or regular user)
+
+2.Room:
+	Attributes:
+		ID (unique identifier)
+		Hotel ID (reference to the hotel the room belongs to)
+		Room Number
+		Type
+		Capacity
+		Amenities: 
+		Price per Night
+
+3.Hotel:
+	Attributes:
+		ID (unique identifier)
+		Name
+		Location
+		Description
+
+4.Reservation:
+	Attributes:
+		ID (unique identifier)
+		User ID (reference to the user who made the reservation)
+		Room ID (reference to the reserved room)
+		Check-in Date
+		Check-out Date
+		Total Price
+		Status (e.g., confirmed, canceled)
+
+Relationships:
+	One-to-Many Relationship: Hotel to Room
+		Each hotel can have multiple rooms.
+		Rooms are associated with a specific hotel through a reference relationship.
+		Reference relationship: The Room entity contains a reference to the Hotel entity using the Hotel ID attribute.
+
+	One-to-Many Relationship: User to Reservation
+		Each user can have multiple reservations.
+		Reservations are associated with a specific user through a reference relationship.
+		Reference relationship: The Reservation entity contains a reference to the User entity using the User ID attribute.
+
+
+[
+  {
+    "_id": "reservation1",
+    "userId": "user1",
+    "roomId": "room1",
+    "checkInDate": "2023-07-01",
+    "checkOutDate": "2023-07-05",
+    "totalPrice": 600,
+    "status": "confirmed"
+  },
+  {
+    "_id": "reservation2",
+    "userId": "user2",
+    "roomId": "room2",
+    "checkInDate": "2023-07-10",
+    "checkOutDate": "2023-07-12",
+    "totalPrice": 160,
+    "status": "confirmed"
+  },
+  {
+    "_id": "reservation3",
+    "userId": "user1",
+    "roomId": "room3",
+    "checkInDate": "2023-08-15",
+    "checkOutDate": "2023-08-20",
+    "totalPrice": 1250,
+    "status": "confirmed"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
