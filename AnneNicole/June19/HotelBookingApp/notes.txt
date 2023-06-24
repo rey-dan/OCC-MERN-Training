@@ -1,0 +1,99 @@
+Hot loading Hot reloading in React
+
+Create both MongoDB atlas and MongoDB compass. They are the same.
+But with compass you don't have to open on chrome.
+
+With the help of mongoose we can simplify mongodb operations.
+No need to write queries, mongoose will take care of those things.
+
+
+
+========================================
+
+import React from 'react'
+
+function FunctionName(){
+  return(
+    <div>
+      <h1></h1>
+    </div>
+  )
+}
+
+export default FunctionName;
+
+========================================
+
+ npm i react-router-dom axios
+
+
+[
+  {
+    "name": "Room 1",
+    "maxcount": 2,
+    "phonenumber": 123456789,
+    "rentperday": 100,
+    "imageurls": ["https://images.oyoroomscdn.com/uploads/hotel_image/90658/large/c08a1f07fd3a477e.jpg", "https://images.oyoroomscdn.com/uploads/hotel_image/90658/large/fd1021eceb56db17.jpg", "https://images.oyoroomscdn.com/uploads/hotel_image/90658/large/86ad7bcaf8117ec8.jpg"],
+    "currentbookings": [],
+    "type": "Single",
+    "description": "This is a cozy single room suitable for up to two guests. It offers a comfortable space for relaxation and rest, with modern amenities and tasteful decor."
+  },
+  {
+    "name": "Room 2",
+    "maxcount": 4,
+    "phonenumber": 987654321,
+    "rentperday": 150,
+    "imageurls": ["https://images.oyoroomscdn.com/uploads/hotel_image/86814/large/3ed5814f43c0540f.jpg", "https://images.oyoroomscdn.com/uploads/hotel_image/86814/large/5462b86a530bea85.jpg", "https://images.oyoroomscdn.com/uploads/hotel_image/86814/large/d14ca1d9a0680615.jpg"],
+    "currentbookings": [],
+    "type": "Double",
+    "description": "Indulge in the spaciousness of our luxurious double room, designed to accommodate up to four guests. It features elegant furnishings, breathtaking views, and a tranquil ambiance for a memorable stay."
+  },
+  {
+    "name": "Room 3",
+    "maxcount": 3,
+    "phonenumber": 555555555,
+    "rentperday": 200,
+    "imageurls": ["https://images.oyoroomscdn.com/uploads/hotel_image/83298/large/5508308fe8f4248f.JPG", "https://images.oyoroomscdn.com/uploads/hotel_image/83298/large/2c22ea849f4b8561.JPG", "https://images.oyoroomscdn.com/uploads/hotel_image/83298/large/216ff0ff3498d686.JPG"],
+    "currentbookings": [],
+    "type": "Triple",
+    "description": "Experience ultimate comfort in our triple room, perfect for small groups or families. With its modern amenities, ample space, and inviting atmosphere, it ensures a delightful stay for up to three guests."
+  },
+  {
+    "name": "Room 4",
+    "maxcount": 1,
+    "phonenumber": 999999999,
+    "rentperday": 80,
+    "imageurls": ["https://images.oyoroomscdn.com/uploads/hotel_image/190088/large/89e0be4da9468b17.jpg", "https://images.oyoroomscdn.com/uploads/hotel_image/190088/large/396c547dd8a71abd.jpg", "https://images.oyoroomscdn.com/uploads/hotel_image/190088/large/9b1d3ba7c88181ac.jpg"],
+    "currentbookings": [],
+    "type": "Single",
+    "description": "Enjoy a peaceful retreat in this charming single room, tailored for solo travelers. It offers a cozy ambiance, essential amenities, and a pleasant environment for relaxation and rejuvenation."
+  }
+]
+
+
+
+
+This code snippet demonstrates the use of Express.js to create a router for handling HTTP requests related to rooms. Let's break it down:
+
+Importing dependencies: The first line imports the express module, which is a fast and minimalist web application framework for Node.js. The second line creates a router object using express.Router(), which allows you to define routes for specific endpoints.
+javascript
+Copy code
+const express = require("express");
+const router = express.Router();
+Importing the room model: The third line imports the Room model from the ../models/room file. This assumes that you have defined a room model in a separate file, which likely corresponds to the Mongoose schema and model we discussed earlier.
+javascript
+Copy code
+const Room = require("../models/room");
+Defining a route: The next block of code defines a route for handling GET requests to the "/getallrooms" endpoint. When a request is made to this endpoint, the provided callback function will be executed.
+javascript
+Copy code
+router.get("/getallrooms", async (req, res) => {
+  // Code to fetch all rooms from the database
+});
+Fetching all rooms: Within the callback function, the await Room.find({}) code is used to fetch all room documents from the MongoDB database. The Room model is used here, which represents the Mongoose model for the "rooms" collection. The find({}) method without any filters retrieves all documents from the collection.
+javascript
+Copy code
+const rooms = await Room.find({});
+Note that the code snippet currently does not handle the response to the client. To complete the implementation, you would typically send the rooms data back as a response to the client using the res object.
+
+This code is just an example of fetching all rooms from the database. You can further enhance it to handle errors, apply filters, and perform additional operations based on your specific requirements.

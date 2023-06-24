@@ -1,0 +1,10 @@
+{
+    "email": "annenicole@gmail.com",
+    "password": "AbC123!!"
+}
+
+
+{
+    "email": "annenicolearbo@gmail.com",
+    "password": "njkh9080HJG$$!!"
+}
